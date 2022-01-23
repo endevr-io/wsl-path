@@ -1,6 +1,6 @@
 {
   "name": "@endevr-io/wsl-path",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert Windows paths to WSL and vice-versa without CLI tools",
   "keywords": [
     "windows",
