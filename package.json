@@ -1,6 +1,6 @@
 {
   "name": "@endevr-io/wsl-path",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert Windows paths to WSL and vice-versa without CLI tools",
   "keywords": [
     "windows",
@@ -10,16 +10,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/endevr-io/wslpath.git"
+    "url": "git+https://github.com/endevr-io/wsl-path.git"
   },
   "main": "index.js",
   "scripts": {
-    "test": "standard && jest"
+    "test": "standard && jest",
+    "readme": "jsdoc2md -t README.hbs index.js > README.md"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/endevr-io/wslpath/issues"
+    "url": "https://github.com/endevr-io/wsl-path/issues"
   },
   "funding": {
     "type": "individual",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "jest": "^27.4.7",
+    "jsdoc-to-markdown": "^7.1.0",
     "standard": "^16.0.4"
   }
 }

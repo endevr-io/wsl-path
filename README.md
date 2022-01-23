@@ -18,30 +18,55 @@ npm install @endever-io/wsl-path
 yarn add @endever-io/wsl-path
 ```
 
-## Usage
+## Functions
 
-```javascript
-const { windowsToWsl, wslToWindows } = require('@endever-io/wsl-path')
+<dl>
+<dt><a href="#windowsToWsl">windowsToWsl(absolutePath)</a> ⇒ <code>string</code></dt>
+<dd><p>Converts a Windows path to a WSL path</p>
+</dd>
+<dt><a href="#wslToWindows">wslToWindows(absolutePath)</a> ⇒ <code>string</code></dt>
+<dd><p>Converts a WSL path to a Windows path</p>
+</dd>
+</dl>
 
-// This package does not check if the path exists
-// The path must be an absolute path or an exception is thrown
+<a name="windowsToWsl"></a>
 
-try {
-  const wsl = windowsToWsl('C:\\Users\\endevr\\Documents')
-  console.log(wsl)
-  # logs '/mnt/c/Users/endevr/Documents'
-} catch (error) {
-  console.log(error)
-}
+## windowsToWsl(absolutePath) ⇒ <code>string</code>
+Converts a Windows path to a WSL path
 
-try {
-  const windows = wslToWindows('/mnt/c/Users/endevr/Documents')
-  console.log(windows)
-  # logs 'C:\\Users\\endevr\\Documents'
-} catch (error) {
-  console.log(error)
-}
-```
+**Kind**: global function  
+**Returns**: <code>string</code> - normalized WSL path  
+**Throws**:
+
+- <code>TypeError</code> throws if absolutePath is not a string
+- <code>Error</code> throws if the path in not an absolute path
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| absolutePath | <code>string</code> | an absolute Windows path |
+
+**Example**  
+```javascriptconst { windowsToWsl } = require('@endevr-io/wsl-path')const wsl = windowsToWsl('C:\\Users\\endevr\\Documents')console.log(wsl)// '/mnt/c/Users/endevr/Documents'```
+<a name="wslToWindows"></a>
+
+## wslToWindows(absolutePath) ⇒ <code>string</code>
+Converts a WSL path to a Windows path
+
+**Kind**: global function  
+**Returns**: <code>string</code> - normalized Windows path  
+**Throws**:
+
+- <code>TypeError</code> throws if absolutePath is not a string
+- <code>Error</code> throws if the path in not an absolute path
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| absolutePath | <code>string</code> | an absolute WSL path |
+
+**Example**  
+```javascriptconst windows = wslToWindows('/mnt/c/Users/endevr/Documents')console.log(windows)// 'C:\\Users\\endevr\\Documents'```
 
 ## Contributing
 Pull requests are welcome for bug fixes or feature requests. Make sure that all tests pass with `npm run test` before creating a pull request.
